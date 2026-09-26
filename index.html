@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SN STORE — Premium Smartphones</title>
+  <meta name="description"
+    content="SN STORE — premium smartphones, curated flagship deals, and next-gen mobile shopping." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="loader" class="loader" aria-live="polite">
+    <img class="loader-logo" src="assets/logo.png" alt="SN STORE" />
+    <p class="loader-text">SN STORE</p>
+  </div>
+  <script>
+    // Fail-safe preloader dismissal: guarantees loader always leaves screen in 1.0 - 1.2s max
+    (function () {
+      function dismissLoader() {
+        var loader = document.getElementById("loader");
+        if (loader && !loader.classList.contains("hide")) {
+          loader.classList.add("hide");
+        }
+        if (document.body && !document.body.classList.contains("loaded")) {
+          document.body.classList.add("loaded");
+        }
+      }
+      setTimeout(dismissLoader, 1100);
+      window.addEventListener("load", function () {
+        setTimeout(dismissLoader, 500);
+      }, { once: true });
+    })();
+  </script>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="SN STORE home">
+        <img class="brand-mark" src="assets/logo.png" alt="" />
+        <span class="brand-name">SN STORE</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#featured" class="nav-link">Featured</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#brands" class="nav-link">Brands</a>
+        <a href="#offers" class="nav-link">Offers</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Open search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartToggle" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-panel" id="searchPanel" aria-label="Search products">
+      <div class="search-inner">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search iPhone, Galaxy, Pixel…" autocomplete="off"
+          aria-label="Search products" />
+        <button class="icon-btn" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#featured" class="mobile-link">Featured</a>
+    <a href="#showcase" class="mobile-link">Showcase</a>
+    <a href="#brands" class="mobile-link">Brands</a>
+    <a href="#offers" class="mobile-link">Offers</a>
+    <a href="#reviews" class="mobile-link">Reviews</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+  <div class="mobile-menu-backdrop" id="mobileBackdrop"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-background-video" id="heroBackgroundVideo" autoplay muted loop playsinline preload="metadata"
+        poster="assets/hero-background-poster.jpg">
+        <source src="assets/hero-background-loop.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">NEXT-GEN DEVICES, TODAY</p>
+          <h1 class="hero-title">
+            <span class="typewriter-text" id="heroTypewriter">Carry the future in your pocket.</span><span
+              class="typewriter-cursor" aria-hidden="true"></span>
+          </h1>
+          <p class="hero-subtitle">
+            Flagship phones from every brand that matters — curated, compared, and delivered with a price tag that still
+            lets you sleep at night.
+          </p>
+          <div class="hero-actions">
+            <a href="#showcase" class="btn btn-primary">Explore Phones <span aria-hidden="true">→</span></a>
+            <a href="#offers" class="btn btn-secondary">View Offers</a>
+          </div>
+
+          <div class="hero-stats" id="heroStats">
+            <div class="stat-item">
+              <span class="stat-num" data-count="10">0</span><span class="stat-suffix">K+</span>
+              <p>Happy customers</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
+              <p>Phone models</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-count="25">0</span><span class="stat-suffix">+</span>
+              <p>Cities served</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal" id="heroStage">
+          <!-- AUTO ASSEMBLE Control Pill -->
+          <div class="teardown-control">
+            <button class="explode-toggle active" id="explodeToggle" aria-label="Toggle Auto Assemble Animation">
+              <span class="toggle-pulse" aria-hidden="true"></span>
+              <span class="toggle-label" id="toggleLabel">AUTO ASSEMBLE</span>
+            </button>
+          </div>
+
+          <!-- Dedicated Phone Stage: ONE Shared Coordinate System -->
+          <div class="phone-stage" id="phoneStage">
+            <!-- Smooth Curved SVG Connectors -->
+            <svg class="connector-svg" id="connectorSvg" viewBox="0 0 580 620" aria-hidden="true">
+              <defs>
+                <linearGradient id="connGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.5" />
+                </linearGradient>
+                <linearGradient id="connGradViolet" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#c084fc" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#6366f1" stop-opacity="0.5" />
+                </linearGradient>
+                <filter id="connGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path class="connector-line line-display" id="lineDisplay" filter="url(#connGlow)"
+                stroke="url(#connGradCyan)" />
+              <circle class="connector-anchor-dot anchor-dot-display" id="anchorDotDisplay" r="4.5" fill="#22d3ee" />
+
+              <path class="connector-line line-camera" id="lineCamera" filter="url(#connGlow)"
+                stroke="url(#connGradViolet)" />
+              <circle class="connector-anchor-dot anchor-dot-camera" id="anchorDotCamera" r="4.5" fill="#c084fc" />
+
+              <path class="connector-line line-battery" id="lineBattery" filter="url(#connGlow)"
+                stroke="url(#connGradCyan)" />
+              <circle class="connector-anchor-dot anchor-dot-battery" id="anchorDotBattery" r="4.5" fill="#22d3ee" />
+
+              <path class="connector-line line-chip" id="lineChip" filter="url(#connGlow)"
+                stroke="url(#connGradViolet)" />
+              <circle class="connector-anchor-dot anchor-dot-chip" id="anchorDotChip" r="4.5" fill="#c084fc" />
+            </svg>
+
+            <!-- Soft Floor Shadow -->
+            <div class="phone-shadow" aria-hidden="true"></div>
+
+            <!-- Single Master Coordinate 3D Phone Assembly (20% Scaled for Perfect Clearance) -->
+            <div class="phone-assembly is-exploded" id="phoneAssembly">
+              <!-- 1. Rear Glass Panel (Bottommost) -->
+              <div class="phone-part phone-back-glass" id="partBackGlass" data-part="back-glass"
+                title="Frosted Titanium Rear Glass">
+                <div class="back-glass-inner">
+                  <div class="back-glass-plateau-cutout"></div>
+                  <div class="back-glass-logo">
+                    <span class="logo-mark">SN</span>
+                  </div>
+                  <div class="back-glass-sheen"></div>
+                </div>
+              </div>
+
+              <!-- 2. Titanium Frame / Chassis -->
+              <div class="phone-part phone-frame" id="partFrame" data-part="frame" title="Aerospace Titanium Chassis">
+                <div class="frame-outer-bezel">
+                  <div class="frame-antenna antenna-tl"></div>
+                  <div class="frame-antenna antenna-tr"></div>
+                  <div class="frame-antenna antenna-bl"></div>
+                  <div class="frame-antenna antenna-br"></div>
+                  <div class="frame-midframe-bay">
+                    <div class="thermal-graphite-pad"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Precision Side Buttons -->
+              <div class="phone-part phone-buttons" id="partButtons" data-part="buttons"
+                title="Titanium Action & Volume Buttons">
+                <div class="phone-button-elem btn-action"></div>
+                <div class="phone-button-elem btn-vol-up"></div>
+                <div class="phone-button-elem btn-vol-down"></div>
+                <div class="phone-button-elem btn-power"></div>
+              </div>
+
+              <!-- 4. Acoustic Stereo Speaker Module -->
+              <div class="phone-part phone-speaker" id="partSpeaker" data-part="speaker"
+                title="Acoustic Stereo Speaker Module">
+                <div class="speaker-module-box">
+                  <div class="speaker-acoustic-mesh"></div>
+                  <div class="speaker-acoustic-label">STEREO</div>
+                </div>
+              </div>
+
+              <!-- 5. Reversible USB-C 3.2 Port Module -->
+              <div class="phone-part phone-usb-port" id="partUsbPort" data-part="usb-port"
+                title="USB-C 3.2 Reversible Port">
+                <div class="usbc-port-housing">
+                  <div class="usbc-interior-tongue"></div>
+                  <div class="usbc-water-seal"></div>
+                </div>
+              </div>
+
+              <!-- 6. Qi2 Magnetic Induction Wireless Charging Coil -->
+              <div class="phone-part phone-wireless-coil" id="partWirelessCoil" data-part="wireless-coil"
+                title="Qi2 Magnetic Wireless Induction Coil">
+                <div class="qi2-coil-disc">
+                  <div class="qi2-copper-windings"></div>
+                  <div class="qi2-magnet-ring">
+                    <span class="mag-segment"></span><span class="mag-segment"></span>
+                    <span class="mag-segment"></span><span class="mag-segment"></span>
+                    <span class="mag-segment"></span><span class="mag-segment"></span>
+                    <span class="mag-segment"></span><span class="mag-segment"></span>
+                  </div>
+                  <div class="qi2-center-core"></div>
+                </div>
+              </div>
+
+              <!-- 7. High-Capacity Fast Charge Battery Cell -->
+              <div class="phone-part phone-battery" id="partBattery" data-part="battery"
+                title="5000mAh High-Density Fast Battery">
+                <div class="battery-cell-body">
+                  <div class="battery-typography">
+                    <div class="battery-metric-main">5000 mAh</div>
+                    <div class="battery-metric-sub">19.25Wh • 3.85V • 100W HYPERCHARGE</div>
+                    <div class="battery-warning-row">
+                      <span class="battery-badge">LITHIUM-ION COBALT</span>
+                      <span class="battery-badge-sec">A18 OPTIMIZED</span>
+                    </div>
+                  </div>
+                  <div class="battery-pull-tab"></div>
+                  <div class="battery-flex-ribbon"></div>
+                </div>
+              </div>
+
+              <!-- 8. Multilayer Logic Board Motherboard PCB -->
+              <div class="phone-part phone-motherboard" id="partMotherboard" data-part="motherboard"
+                title="Multilayer Logic Board PCB">
+                <div class="motherboard-pcb-surface">
+                  <div class="pcb-gold-buses"></div>
+                  <div class="pcb-vapor-chamber"></div>
+                  <div class="pcb-shield-can can-rf"></div>
+                  <div class="pcb-shield-can can-power"></div>
+                  <div class="pcb-connector-flex flex-top"></div>
+                  <div class="pcb-connector-flex flex-side"></div>
+                </div>
+              </div>
+
+              <!-- 9. A18 Neural Processor Silicon Chip -->
+              <div class="phone-part phone-chip" id="partChip" data-part="chip" title="A18 Neural Bionic Processor">
+                <div class="chip-silicon-socket">
+                  <div class="chip-silicon-die">
+                    <div class="chip-die-brand">A18</div>
+                    <div class="chip-die-sub">NEURAL</div>
+                  </div>
+                  <div class="chip-gold-contacts"></div>
+                  <div class="chip-glow-aura"></div>
+                </div>
+              </div>
+
+              <!-- 10. High-Speed LPDDR5X Memory RAM Module -->
+              <div class="phone-part phone-memory" id="partMemory" data-part="memory"
+                title="256GB LPDDR5X Ultra-Fast Memory">
+                <div class="memory-bga-package">
+                  <span class="memory-brand">LPDDR5X</span>
+                  <span class="memory-cap">256GB</span>
+                </div>
+              </div>
+
+              <!-- 11. Sapphire Camera Housing Island -->
+              <div class="phone-part phone-camera-housing" id="partCameraHousing" data-part="camera-housing"
+                title="Sapphire Camera Island Plateau">
+                <div class="camera-island-plate">
+                  <div class="camera-lens-well well-top"></div>
+                  <div class="camera-lens-well well-bottom"></div>
+                  <div class="camera-lens-well well-side"></div>
+                  <div class="camera-dual-flash"></div>
+                  <div class="camera-lidar-sensor"></div>
+                  <div class="camera-mic-port"></div>
+                </div>
+              </div>
+
+              <!-- 12. Precision Optical Camera Lens 1 -->
+              <div class="phone-part phone-camera-lens-1" id="partCameraLens1" data-part="lens-1"
+                title="108MP Main Optical Lens">
+                <div class="optic-lens-assembly">
+                  <div class="optic-outer-ring"></div>
+                  <div class="optic-iris-blades"></div>
+                  <div class="optic-glass-element">
+                    <div class="optic-antireflective-coat"></div>
+                    <div class="optic-specular-dot"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 13. Precision Optical Camera Lens 2 -->
+              <div class="phone-part phone-camera-lens-2" id="partCameraLens2" data-part="lens-2"
+                title="50MP Periscope Optical Lens">
+                <div class="optic-lens-assembly">
+                  <div class="optic-outer-ring"></div>
+                  <div class="optic-iris-blades"></div>
+                  <div class="optic-glass-element">
+                    <div class="optic-antireflective-coat"></div>
+                    <div class="optic-specular-dot"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 14. Precision Optical Camera Lens 3 -->
+              <div class="phone-part phone-camera-lens-3" id="partCameraLens3" data-part="lens-3"
+                title="48MP Cinematic Ultra-Wide Lens">
+                <div class="optic-lens-assembly">
+                  <div class="optic-outer-ring"></div>
+                  <div class="optic-iris-blades"></div>
+                  <div class="optic-glass-element">
+                    <div class="optic-antireflective-coat"></div>
+                    <div class="optic-specular-dot"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 15. Super Retina XDR OLED Display Assembly -->
+              <div class="phone-part phone-display" id="partDisplay" data-part="display"
+                title="6.7 ProMotion OLED Display Assembly">
+                <div class="oled-display-chassis">
+                  <div class="oled-dynamic-island">
+                    <span class="island-camera-dot"></span>
+                    <span class="island-faceid-dot"></span>
+                  </div>
+                  <div class="oled-screen-surface">
+                    <div class="oled-screen-wallpaper">
+                      <div class="wallpaper-glow-top"></div>
+                      <div class="wallpaper-glow-bot"></div>
+                      <div class="wallpaper-mesh-lines"></div>
+                    </div>
+                    <div class="oled-screen-interface">
+                      <div class="lockscreen-clock">10:09</div>
+                      <div class="lockscreen-date">Tuesday, September 24</div>
+                      <div class="lockscreen-status-row">
+                        <span class="status-chip chip-battery">⚡ 100%</span>
+                        <span class="status-chip chip-network">5G Ultra</span>
+                        <span class="status-chip chip-promotion">120Hz</span>
+                      </div>
+                      <div class="lockscreen-actions">
+                        <div class="action-btn btn-torch">
+                          <svg viewBox="0 0 24 24">
+                            <path d="M18 6V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"></path>
+                            <path d="m6 10 3 10h6l3-10"></path>
+                            <line x1="12" y1="14" x2="12" y2="14.01"></line>
+                          </svg>
+                        </div>
+                        <div class="action-btn btn-camera">
+                          <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                              d="M4 8h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 16. Ceramic Shield Protective Front Glass -->
+              <div class="phone-part phone-front-glass" id="partFrontGlass" data-part="front-glass"
+                title="Ceramic Shield Protective Front Glass">
+                <div class="front-glass-sheet">
+                  <div class="earpiece-speaker-slot"></div>
+                  <div class="front-glass-bevel-sheen"></div>
+                </div>
+              </div>
+
+              <!-- 17. Studio Product Lighting Reflection Layer -->
+              <div class="phone-part phone-reflection" id="partReflection" data-part="reflection" aria-hidden="true">
+                <div class="reflection-sheen-sweep"></div>
+              </div>
+
+              <!-- Soft Energy Glow Pulse Ring -->
+              <div class="phone-pulse-ring" id="phonePulseRing" aria-hidden="true"></div>
+            </div>
+
+            <!-- 4 Dedicated Callout Cards (Inside .phone-stage coordinate system) -->
+            <div class="callout-card spec-chip card-display chip-one" id="cardDisplay" data-component="display">
+              <div class="chip-top">
+                <span class="chip-icon-box chip-icon-display">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="5" y="2" width="14" height="20" rx="3"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </span>
+                <span class="chip-label">DISPLAY</span>
+              </div>
+              <span class="chip-value">6.7" ProMotion</span>
+            </div>
+
+            <div class="callout-card spec-chip card-camera chip-two" id="cardCamera" data-component="camera">
+              <div class="chip-top">
+                <span class="chip-icon-box chip-icon-camera">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M4 8h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z"></path>
+                  </svg>
+                </span>
+                <span class="chip-label">CAMERA</span>
+              </div>
+              <span class="chip-value">108MP Triple</span>
+            </div>
+
+            <div class="callout-card spec-chip card-battery chip-three" id="cardBattery" data-component="battery">
+              <div class="chip-top">
+                <span class="chip-icon-box chip-icon-battery">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="7" width="16" height="10" rx="2"></rect>
+                    <line x1="22" y1="11" x2="22" y2="13"></line>
+                    <polygon points="7 12 10 9 10 12 13 12 10 15 10 12 7 12"></polygon>
+                  </svg>
+                </span>
+                <span class="chip-label">BATTERY</span>
+              </div>
+              <span class="chip-value">5000mAh Fast</span>
+            </div>
+
+            <div class="callout-card spec-chip card-chip chip-four" id="cardChip" data-component="chip">
+              <div class="chip-top">
+                <span class="chip-icon-box chip-icon-chip">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <rect x="9" y="9" width="6" height="6"></rect>
+                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                  </svg>
+                </span>
+                <span class="chip-label">CHIP</span>
+              </div>
+              <span class="chip-value">A18 Neural</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">FEATURED THIS WEEK</p>
+          <h2>Featured this week</h2>
+          <p>Hand-picked flagships our team can't stop talking about.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <div class="filter-group" id="brandFilters">
+            <button class="filter-chip active" data-brand="all">All</button>
+            <button class="filter-chip" data-brand="Apple">Apple</button>
+            <button class="filter-chip" data-brand="Samsung">Samsung</button>
+            <button class="filter-chip" data-brand="OnePlus">OnePlus</button>
+            <button class="filter-chip" data-brand="Google">Pixel</button>
+            <button class="filter-chip" data-brand="Xiaomi">Xiaomi</button>
+          </div>
+          <div class="price-filter">
+            <label for="priceRange">Max price: <span id="priceValue">₹89,900</span></label>
+            <input type="range" id="priceRange" min="33999" max="89900" step="1" value="89900" />
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <p class="no-results" id="noResults" hidden>No phones match your search. Try a different filter.</p>
+      </div>
+    </section>
+
+    <section class="section showcase" id="showcase">
+      <div class="section-inner showcase-wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">BUILT FOR WHAT'S NEXT</p>
+          <h2>Built for what’s next.</h2>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="brand-picker reveal" id="brandPicker" aria-label="Choose a brand showcase">
+            <button class="brand-btn active" data-model="apple">iPhone</button>
+            <button class="brand-btn" data-model="samsung">Samsung</button>
+            <button class="brand-btn" data-model="oneplus">OnePlus</button>
+            <button class="brand-btn" data-model="pixel">Google Pixel</button>
+            <button class="brand-btn" data-model="xiaomi">Xiaomi</button>
+          </div>
+
+          <div class="showcase-stage reveal">
+            <div class="showcase-phone" id="showcasePhone">
+              <div class="showcase-phone-glow" aria-hidden="true"></div>
+              <div class="showcase-img-wrap">
+                <img class="device-visual" src="images/iphone-16-pro.jpg" alt="Featured iPhone 16 Pro" loading="lazy"
+                  onerror="this.onerror=null;this.src='images/iphone-16-pro.jpg';" />
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-info reveal" id="showcaseInfo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brands" id="brands">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">AUTHORIZED BRANDS</p>
+          <h2>All the names you trust</h2>
+          <p>Authorized. Genuine. Guaranteed.</p>
+        </div>
+        <div class="brand-strip reveal" id="brandStrip"></div>
+      </div>
+    </section>
+
+    <section class="section offers" id="offers">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">DEALS WORTH GRABBING</p>
+          <h2>Deals worth grabbing</h2>
+          <p>Smart savings for flagship upgrades and everyday upgrades alike.</p>
+        </div>
+        <div class="offer-grid reveal" id="offerGrid"></div>
+      </div>
+    </section>
+
+    <section class="section why" id="why">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">WHY SN STORE</p>
+          <h2>Why SN STORE</h2>
+          <p>The details that make buying a phone painless.</p>
+        </div>
+        <div class="why-grid" id="whyGrid"></div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">CUSTOMER LOVE</p>
+          <h2>What customers say</h2>
+          <p>Real words from real upgrades.</p>
+        </div>
+        <div class="review-track-wrap reveal">
+          <div class="review-track" id="reviewTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-inner about-inner">
+        <div class="about-copy reveal">
+          <p class="eyebrow">OUR STORY</p>
+          <h2>Built by people who actually love phones.</h2>
+          <p class="about-text">SN STORE started in 2019 as a premier boutique with three flagship models and a stubborn
+            belief that buying a phone shouldn't feel like a negotiation. Today we carry every major flagship, back
+            every sale with genuine warranty, and still let you experience the devices in hand before you decide.</p>
+          <div class="about-points">
+            <div class="about-point"><span>100%</span>Genuine products</div>
+            <div class="about-point"><span>24/7</span>Customer support</div>
+            <div class="about-point"><span>7-day</span>Easy returns</div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-card"><img src="images/store-experience.jpg" alt="SN STORE Experience Center"
+              loading="lazy" /></div>
+          <div class="about-card"><img src="images/flagships-collection.jpg" alt="SN STORE Flagship Collection"
+              loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">ASK A QUESTION</p>
+          <h2>Get in touch</h2>
+          <p>Questions before you buy? We reply fast.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="cName">Your name</label>
+                <input type="text" id="cName" name="name" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="cEmail">Email address</label>
+                <input type="email" id="cEmail" name="email" placeholder="Email address" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cSubject">Subject</label>
+              <input type="text" id="cSubject" name="subject" placeholder="Subject" required />
+            </div>
+
+            <div class="field">
+              <label for="cMessage">Message</label>
+              <textarea id="cMessage" name="message" rows="5" placeholder="Tell us what you need" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">
+              <span>Send message</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </button>
+            <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-side reveal">
+            <div class="contact-card">
+              <h3>Visit the store</h3>
+              <p>221B Circuit Avenue,<br />Salt Lake Sector V,<br />Kolkata 700091</p>
+            </div>
+            <div class="contact-card">
+              <h3>Talk to us</h3>
+              <p>+91 98765 43210<br />support@snstore.com</p>
+            </div>
+            <div class="contact-card">
+              <h3>Store hours</h3>
+              <p>Mon – Sat: 10:00 – 21:00<br />Sunday: 11:00 – 18:00</p>
+            </div>
+            <a class="btn btn-whatsapp full-width" id="generalWhatsapp" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58ZM12.06 18.4h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.62 6.62 0 0 1 10.3-8.21 6.57 6.57 0 0 1 1.94 4.68 6.64 6.64 0 0 1-6.64 6.62Zm3.63-4.96c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.51.64-.62.77-.11.13-.23.14-.43.05a5.4 5.4 0 0 1-1.6-.98 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.23.3-.35.1-.11.13-.2.2-.33.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.34h-.38c-.13 0-.34.05-.52.25-.18.2-.68.67-.68 1.63 0 .96.7 1.9.8 2.03.1.13 1.37 2.1 3.33 2.94.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.17-.46.17-.86.12-.94-.05-.09-.18-.14-.38-.24Z">
+                </path>
+              </svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-ambient-glow" aria-hidden="true">
+      <span class="footer-particle fp-1"></span>
+      <span class="footer-particle fp-2"></span>
+      <span class="footer-particle fp-3"></span>
+    </div>
+
+    <div class="footer-container">
+      <!-- 7. Premium CTA Strip Card -->
+      <div class="footer-cta-card">
+        <div class="footer-cta-glow" aria-hidden="true"></div>
+        <div class="footer-cta-content">
+          <h3 class="footer-cta-title">Ready for your next device?</h3>
+          <p class="footer-cta-desc">Explore the latest smartphones, compare models and find your next upgrade.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="#showcase" class="btn btn-primary footer-cta-btn">Explore Phones <span
+              aria-hidden="true">→</span></a>
+          <a href="#offers" class="btn btn-secondary footer-cta-btn-alt">View Offers</a>
+        </div>
+      </div>
+
+      <!-- 4-Column Desktop / Responsive Layout -->
+      <div class="footer-grid">
+        <!-- Column 1: Brand Area -->
+        <div class="footer-col-brand">
+          <a href="#home" class="footer-brand-lockup">
+            <img class="footer-brand-mark" src="assets/logo.png" alt="" />
+            <span class="footer-brand-title">SN STORE</span>
+          </a>
+          <p class="footer-tagline">Next-gen devices. Smarter shopping.</p>
+          <div class="footer-social-glass">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-glass-btn"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-glass-btn"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-glass-btn"
+              aria-label="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-glass-btn"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col-nav">
+          <h4 class="footer-col-title">Quick links</h4>
+          <ul class="footer-link-list">
+            <li><a href="#home" class="footer-arrow-link"><span>Home</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#featured" class="footer-arrow-link"><span>Featured</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#showcase" class="footer-arrow-link"><span>Showcase</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#brands" class="footer-arrow-link"><span>Brands</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#offers" class="footer-arrow-link"><span>Offers</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#reviews" class="footer-arrow-link"><span>Reviews</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#contact" class="footer-arrow-link"><span>Contact</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer & Social -->
+        <div class="footer-col-nav">
+          <h4 class="footer-col-title">Customer</h4>
+          <ul class="footer-link-list">
+            <li><a href="#contact" class="footer-arrow-link"><span>Shipping</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#contact" class="footer-arrow-link"><span>Returns</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#contact" class="footer-arrow-link"><span>Warranty</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+            <li><a href="#contact" class="footer-arrow-link"><span>Support</span><span class="link-arrow"
+                  aria-hidden="true">→</span></a></li>
+          </ul>
+
+          <h4 class="footer-col-title footer-social-heading">Social</h4>
+          <ul class="footer-link-list footer-social-list">
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                class="footer-arrow-link footer-social-link">
+                <svg viewBox="0 0 24 24" class="footer-inline-svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+                <span class="link-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                class="footer-arrow-link footer-social-link">
+                <svg viewBox="0 0 24 24" class="footer-inline-svg">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+                <span class="link-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                class="footer-arrow-link footer-social-link">
+                <svg viewBox="0 0 24 24" class="footer-inline-svg">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                  </path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+                <span>YouTube</span>
+                <span class="link-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                class="footer-arrow-link footer-social-link">
+                <svg viewBox="0 0 24 24" class="footer-inline-svg">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+                <span class="link-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Stay Updated -->
+        <div class="footer-col-update">
+          <h4 class="footer-col-title">Stay updated</h4>
+          <p class="footer-update-desc">Get drop alerts and price cuts, no spam.</p>
+          <form class="footer-connected-form" id="newsletterForm">
+            <input type="email" placeholder="you@email.com" required aria-label="Email address"
+              class="connected-input" />
+            <button type="submit" aria-label="Subscribe" class="connected-btn">
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 9. Thin Premium Divider -->
+      <div class="footer-divider-line" aria-hidden="true"></div>
+
+      <!-- 10. Copyright & Attribution Area -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copy-text">© <span id="year">2026</span> SN STORE. All rights reserved.</p>
+        <p class="footer-attribution">
+          <a href="https://snsecurity.in" target="_blank" rel="noopener noreferrer" class="sn-security-credit">
+            <img class="sn-security-logo" src="assets/snsecurity-logo.svg" alt="SN Security logo" loading="eager" />
+            <span>Designed &amp; Developed by <span class="sn-security-gradient">SN Security</span></span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="productModal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close product details">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="emi-backdrop" id="emiBackdrop" aria-hidden="true">
+    <section class="emi-dialog" role="dialog" aria-modal="true" aria-labelledby="emiTitle" tabindex="-1">
+      <button type="button" class="emi-close" id="emiClose" aria-label="Close EMI calculator">✕</button>
+      <p class="emi-eyebrow">PAYMENT PLANNER</p>
+      <h2 id="emiTitle">Calculate your EMI</h2>
+      <p class="emi-product-name" id="emiProductName"></p>
+      <div class="emi-controls">
+        <label class="emi-field">
+          <span>Tenure</span>
+          <select id="emiTenure" aria-label="EMI tenure">
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="9">9 months</option>
+            <option value="12" selected>12 months</option>
+            <option value="18">18 months</option>
+          </select>
+        </label>
+        <label class="emi-field">
+          <span>Annual interest rate</span>
+          <span class="emi-rate-input"><input id="emiRate" type="number" min="0" max="60" step="0.1" value="0"
+              inputmode="decimal"><span>%</span></span>
+        </label>
+      </div>
+      <p class="emi-unavailable" id="emiUnavailable" hidden>EMI estimate is unavailable until this product has a
+        confirmed price.</p>
+      <dl class="emi-summary" aria-live="polite">
+        <div>
+          <dt>Product price</dt>
+          <dd id="emiPrice">—</dd>
+        </div>
+        <div>
+          <dt>Selected tenure</dt>
+          <dd id="emiSelectedTenure">12 months</dd>
+        </div>
+        <div>
+          <dt>Interest rate</dt>
+          <dd id="emiSelectedRate">0% p.a.</dd>
+        </div>
+        <div class="emi-total">
+          <dt>Monthly EMI</dt>
+          <dd id="emiMonthly">—</dd>
+        </div>
+        <div>
+          <dt>Total payable</dt>
+          <dd id="emiTotal">—</dd>
+        </div>
+      </dl>
+      <p class="emi-disclaimer">Estimate only. Final financing terms may vary by provider.</p>
+    </section>
+  </div>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <p>Your cart is empty.</p>
+      <span>Add a phone to see it here.</span>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total-row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <a class="btn btn-whatsapp full-width" id="cartWhatsapp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58ZM12.06 18.4h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.62 6.62 0 0 1 10.3-8.21 6.57 6.57 0 0 1 1.94 4.68 6.64 6.64 0 0 1-6.64 6.62Zm3.63-4.96c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.51.64-.62.77-.11.13-.23.14-.43.05a5.4 5.4 0 0 1-1.6-.98 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.23.3-.35.1-.11.13-.2.2-.33.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.34h-.38c-.13 0-.34.05-.52.25-.18.2-.68.67-.68 1.63 0 .96.7 1.9.8 2.03.1.13 1.37 2.1 3.33 2.94.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.17-.46.17-.86.12-.94-.05-.09-.18-.14-.38-.24Z">
+          </path>
+        </svg>
+        <span>Order via WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+
+  <button type="button" class="spin-wheel-launcher" id="spinWheelLauncher" aria-haspopup="dialog"
+    aria-controls="spinWheelBackdrop">
+    <span class="spin-launcher-spark" aria-hidden="true">✦</span>
+    <span>SPIN &amp; WIN</span>
+    <span aria-hidden="true">🎁</span>
+  </button>
+
+  <div class="spin-wheel-backdrop" id="spinWheelBackdrop" aria-hidden="true">
+    <section class="spin-wheel-dialog" role="dialog" aria-modal="true" aria-labelledby="spinWheelTitle" tabindex="-1">
+      <button type="button" class="spin-wheel-close" id="spinWheelClose" aria-label="Close spin wheel">✕</button>
+      <button type="button" class="spin-wheel-sound" id="spinWheelSound" aria-label="Mute spin sound"
+        aria-pressed="true" title="Mute spin sound">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6 9H3v6h3l5 4V5z"></path>
+          <path class="sound-wave" d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+          <path class="sound-wave" d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+          <path class="sound-muted-mark" d="m16 9 5 6m0-6-5 6"></path>
+        </svg>
+      </button>
+      <p class="spin-wheel-eyebrow">SN STORE DAILY DROP</p>
+      <h2 id="spinWheelTitle">Spin for a little extra.</h2>
+      <p class="spin-wheel-intro" id="spinWheelStatus" aria-live="polite">One spin per day. See what you land on.</p>
+
+      <div class="spin-wheel-stage">
+        <span class="spin-wheel-pointer" aria-hidden="true"></span>
+        <div class="spin-wheel-rim">
+          <div class="spin-wheel-disc" id="discountWheel" role="img"
+            aria-label="Discount wheel with six possible results">
+            <span class="spin-wheel-label" style="--wheel-angle: 0deg">5%<small>OFF</small></span>
+            <span class="spin-wheel-label" style="--wheel-angle: 60deg">10%<small>OFF</small></span>
+            <span class="spin-wheel-label" style="--wheel-angle: 120deg">15%<small>OFF</small></span>
+            <span class="spin-wheel-label" style="--wheel-angle: 180deg">20%<small>OFF</small></span>
+            <span class="spin-wheel-label" style="--wheel-angle: 240deg">25%<small>OFF</small></span>
+            <span class="spin-wheel-label spin-wheel-label-better"
+              style="--wheel-angle: 300deg">Better<small>Luck</small></span>
+            <span class="spin-wheel-hub" aria-hidden="true"><span>SN</span></span>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary spin-wheel-action" id="spinWheelButton">SPIN THE WHEEL</button>
+
+      <div class="spin-wheel-result" id="spinWheelResult" hidden aria-live="polite">
+        <p class="spin-wheel-result-kicker">YOUR RESULT</p>
+        <h3 id="spinWheelResultTitle"></h3>
+        <p class="spin-wheel-result-copy" id="spinWheelResultCopy"></p>
+        <div class="spin-wheel-coupon" id="spinWheelCoupon" hidden>
+          <code id="spinWheelCouponCode"></code>
+          <button type="button" id="spinWheelCopy" aria-label="Copy coupon code">Copy Coupon</button>
+        </div>
+        <a href="#featured" class="btn btn-secondary spin-wheel-shop" id="spinWheelShop">Shop Now</a>
+      </div>
+      <p class="spin-wheel-footnote">One spin per local calendar day.</p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
