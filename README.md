@@ -1,4 +1,4 @@
-SN Store 📱
+## SN Store 📱
 
 A premium, responsive smartphone e-commerce website built with HTML, CSS, and JavaScript.
 
